@@ -252,10 +252,10 @@ class UserView(BaseMixin, TemplateView):
             self.template_name = 'blog/user_changetx.html'
         elif slug == 'changepassword':
             self.template_name = 'blog/user_changepassword.html'
-        elif slug == 'changeinfo':
-            self.template_name = 'blog/user_changeinfo.html'
-        elif slug == 'message':
-            self.template_name = 'blog/user_message.html'
+        # elif slug == 'changeinfo':
+        #     self.template_name = 'blog/user_changeinfo.html'
+        # elif slug == 'message':
+        #     self.template_name = 'blog/user_message.html'
         elif slug == 'notification':
             self.template_name = 'blog/user_notification.html'
 
