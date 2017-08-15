@@ -26,7 +26,7 @@ SECRET_KEY = 'p1p2e^77+6ex*1@-s6hzcx7l3bx#g2q0w1za1c-x-1p@n6z^x*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['45.62.111.175','localhost','.zinoblog.top']
 
 
 # Application definition
@@ -87,8 +87,8 @@ DATABASES = {
         'NAME': 'mysql_zino_db',
         'USER':'root',
         'PASSWORD':'d14011b',
-        'HOST':'',
-        'POST':'',
+        'HOST':'127.0.0.1',
+        'POST':'3306',
     }
 }
 
@@ -111,6 +111,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
 
 # 设置user model
 AUTH_USER_MODEL = "zino_auth.ZinoUser"
