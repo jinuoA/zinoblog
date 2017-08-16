@@ -5340,3 +5340,151 @@ Traceback (most recent call last):
   File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 496, in _reverse_with_prefix
     (lookup_view_s, args, kwargs, len(patterns), patterns))
 NoReverseMatch: Reverse for 'article-detail-view' with arguments '(u'Django+Nginx+Gunicorn ',)' and keyword arguments '{}' not found. 1 pattern(s) tried: ['article/(?P<slug>\\w+).html$']
+[2017-08-16 11:42:21,391] [ERROR] base : Internal Server Error: /news/
+Traceback (most recent call last):
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 158, in get
+    context = self.get_context_data(**kwargs)
+  File "/home/jinuo/Wj/2x/zinoblog/blog/views.py", line 331, in get_context_data
+    if news_list:
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 170, in __nonzero__
+    return type(self).__bool__(self)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 166, in __bool__
+    self._fetch_all()
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1054, "Unknown column 'blog_news.id' in 'field list'")
+[2017-08-16 11:42:21,391] [ERROR] base : Internal Server Error: /news/
+Traceback (most recent call last):
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 158, in get
+    context = self.get_context_data(**kwargs)
+  File "/home/jinuo/Wj/2x/zinoblog/blog/views.py", line 331, in get_context_data
+    if news_list:
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 170, in __nonzero__
+    return type(self).__bool__(self)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 166, in __bool__
+    self._fetch_all()
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1054, "Unknown column 'blog_news.id' in 'field list'")
+[2017-08-16 11:42:29,800] [ERROR] base : Internal Server Error: /news/
+Traceback (most recent call last):
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 158, in get
+    context = self.get_context_data(**kwargs)
+  File "/home/jinuo/Wj/2x/zinoblog/blog/views.py", line 331, in get_context_data
+    if news_list:
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 170, in __nonzero__
+    return type(self).__bool__(self)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 166, in __bool__
+    self._fetch_all()
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1054, "Unknown column 'blog_news.id' in 'field list'")
+[2017-08-16 11:42:29,800] [ERROR] base : Internal Server Error: /news/
+Traceback (most recent call last):
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 89, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/views/generic/base.py", line 158, in get
+    context = self.get_context_data(**kwargs)
+  File "/home/jinuo/Wj/2x/zinoblog/blog/views.py", line 331, in get_context_data
+    if news_list:
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 170, in __nonzero__
+    return type(self).__bool__(self)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 166, in __bool__
+    self._fetch_all()
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 829, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/jinuo/Envs/env1/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (1054, "Unknown column 'blog_news.id' in 'field list'")
