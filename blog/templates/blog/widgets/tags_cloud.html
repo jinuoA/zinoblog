@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <div id="tags_cloud" class="">
 </div>
 
@@ -9,8 +10,8 @@
 }
 </style>
 
-<script src="/static/lib/d3/d3.js"></script>
-<script src="/static/js/d3.layout.cloud.js"></script>
+<script src="{% static 'lib/d3/d3.js' %}"></script>
+<script src="{% static 'js/d3.layout.cloud.js' %}"></script>
 <script>
     var fill = d3.scale.category20();
 

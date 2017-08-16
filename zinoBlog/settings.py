@@ -26,12 +26,14 @@ SECRET_KEY = 'p1p2e^77+6ex*1@-s6hzcx7l3bx#g2q0w1za1c-x-1p@n6z^x*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['45.62.111.175','localhost','.zinoblog.top']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = (
+    'bootstrap_toolkit',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,11 +86,11 @@ WSGI_APPLICATION = 'zinoBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql_zino_db',
+        'NAME': 'zino_db',
         'USER':'root',
         'PASSWORD':'d14011b',
-        'HOST':'127.0.0.1',
-        'POST':'3306',
+        'HOST':'',
+        'POST':'',
     }
 }
 
@@ -112,6 +114,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+
+MEDIA_URL = 'static/images/uploads/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'images/upload/') #最后upload后面的 / 一定要加上
+
+
 
 
 # 设置user model
@@ -141,10 +150,10 @@ LOGGING = {
             },
 
         'handlers': {
-            # 'null': {
-            #     'level': 'DEBUG',
-            #     'class': 'django.utils.log.NullHandler',
-            #     },
+            'null': {
+                'level': 'DEBUG',
+                'class': 'django.utils.log.NullHandler',
+                },
             'console': {
                 'level': 'INFO',
                 'class': 'logging.StreamHandler',

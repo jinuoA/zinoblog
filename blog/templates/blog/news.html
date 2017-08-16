@@ -1,5 +1,5 @@
 {% extends "./blog/base.html" %}
-
+{% load staticfiles %}
 {% block main %}
 
 <div class="timeline-content visible-xs">
@@ -58,7 +58,7 @@
 
 {% block js%}
 
-<script src="/static/highslide/highslide-with-html.min.js"></script> 
+<script src="{% static 'highslide/highslide-with-html.min.js' %}"></script>
 <script language="javascript" type="text/javascript">
     hs.graphicsDir = '/static/highslide/graphics/';
     hs.outlineType = 'rounded-white';
@@ -73,7 +73,7 @@
 
 {% block css%}
 
-<link rel="stylesheet" href="/static/highslide/highslide.css">
+<link rel="stylesheet" href="{% static 'highslide/highslide.css' %}">
 <style type="text/css">
 
     /*手机端控制弹出框宽度*/
@@ -82,7 +82,7 @@
             width:320px !important;
         }
 
-        ..highslide-html {
+        .highslide-html {
             width:320px !important;
         }
 

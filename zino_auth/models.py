@@ -2,7 +2,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-
 # 用来修改admin中显示的app名称,因为admin app 名称是用 str.title()显示的,所以修改str类的title方法就可以实现.
 class string_with_title(str):
     def __new__(cls, value, title):

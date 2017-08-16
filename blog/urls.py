@@ -5,7 +5,7 @@ from django.conf.urls import url
 from blog.views import (IndexView, ArticleView, AllView, SearchView,
                         ColumnView, UserView, NewsView, TagView, CategoryView)
 from django.views.generic import TemplateView, DetailView
-from blog.models import News
+from blog.views import *
 
 urlpatterns = [
         url(r'^$', IndexView.as_view(), name='index-view'),
@@ -30,7 +30,9 @@ urlpatterns = [
         url(r'^user/(?P<slug>\w+)$', UserView.as_view(), name='user-view'),
         url(r'^news/$', NewsView.as_view(), name='news-view'),
         url(r'^news/(?P<pk>\w+)$',
-            DetailView.as_view(model=News), name='news-detail-view'),
+            DetailView.as_view(template_name='blog/news_detail.html'), name='news-detail-view'),
+        url(r'^news/(?P<pk>\w+)$',
+            new, name='news-detail-view'),
         url(r'^tag/(?P<tag>\w+)/$', TagView.as_view(), name='tag-detail-view'),
         url(r'^category/(?P<category>\w+)/$',
             CategoryView.as_view(), name='category-detail-view'),

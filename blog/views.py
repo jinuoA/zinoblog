@@ -335,3 +335,7 @@ class NewsView(BaseMixin, TemplateView):
         kwargs['active'] = start_day/7  # li中那个显示active
 
         return super(NewsView, self).get_context_data(**kwargs)
+
+def new(request):
+    news = News.objects.all()
+    return render(request,'blog/news_detail.html',locals())
